@@ -39,21 +39,11 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 func getOrders(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: getOrders")
 
-	Orders = []Order{
-		Order{Id: "Order1", Name: "Order Name 1"},
-		Order{Id: "Order2", Name: "Order Name 2"},
-	}
-
 	json.NewEncoder(w).Encode(Orders)
 }
 
 func getSchedules(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: getSchedules")
-
-	Schedules = []Schedule{
-		Schedule{Id: 1, Name: "Schedule Name 1"},
-		Schedule{Id: 2, Name: "Schedule Name 2"},
-	}
 
 	json.NewEncoder(w).Encode(Schedules)
 }
@@ -61,23 +51,11 @@ func getSchedules(w http.ResponseWriter, r *http.Request) {
 func getScreens(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: getScreens")
 
-	Screens = []Screen{
-		Screen{Id: "ScreenCode1", Name: "Screen Name 1"},
-		Screen{Id: "ScreenCode2", Name: "Screen Name 2"},
-	}
-
 	json.NewEncoder(w).Encode(Screens)
 }
 
 func getShows(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("Endpoint Hit: getShows")
-
-	Shows = []Show{
-		Show{Id: 1, Name: "Morning"},
-		Show{Id: 2, Name: "Afterrnoon"},
-		Show{Id: 3, Name: "Evening"},
-		Show{Id: 3, Name: "Night"},
-	}
 
 	json.NewEncoder(w).Encode(Shows)
 }
@@ -97,5 +75,27 @@ func handleRequests() {
 }
 
 func main() {
+	Orders = []Order{
+		Order{Id: "Order1", Name: "Order Name 1"},
+		Order{Id: "Order2", Name: "Order Name 2"},
+	}
+
+	Schedules = []Schedule{
+		Schedule{Id: 1, Name: "Schedule Name 1"},
+		Schedule{Id: 2, Name: "Schedule Name 2"},
+	}
+
+	Screens = []Screen{
+		Screen{Id: "ScreenCode1", Name: "Screen Name 1"},
+		Screen{Id: "ScreenCode2", Name: "Screen Name 2"},
+	}
+
+	Shows = []Show{
+		Show{Id: 1, Name: "Morning"},
+		Show{Id: 2, Name: "Afterrnoon"},
+		Show{Id: 3, Name: "Evening"},
+		Show{Id: 3, Name: "Night"},
+	}
+
 	handleRequests()
 }
